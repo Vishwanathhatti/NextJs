@@ -30,8 +30,8 @@ const Navbar = () => {
         </div>
 
         <div className="lg:flex gap-5 hidden items-center">
-          {navLinks.map((links) => (
-            <Link href={links.url}>{links.name}</Link>
+          {navLinks.map((links, id) => (
+            <Link href={links.url} key={id}>{links.name}</Link>
           ))}
         </div>
 
@@ -47,8 +47,8 @@ const Navbar = () => {
       </nav>
       {toggle ? (
         <div className="flex flex-col ">
-          {navLinks.map((link) => (
-            <Link className="w-full px-5 py-3 border-b" href={link.url}>
+          {navLinks.map((link, id) => (
+            <Link className="w-full px-5 py-3 border-b" href={link.url} key={id}>
               {link.name}
             </Link>
           ))}
